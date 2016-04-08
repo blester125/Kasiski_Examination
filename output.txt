@@ -1,0 +1,51 @@
+-----------Key used: bellaso----------
+congratulations! by decrypting this message, you have completed step one of this
+assignment. to complete the next step of the assignment, you must submit the
+code to the tools you used to decrypt this message in a bitbucket repository.
+you probably used a kasiski examination, and then a brute-force on all keys of
+the discovered length(s). submit the code you used for both of these steps to a
+private bitbucket repository named cs1653-vigenere-abc123, where abc123 is your
+pitt username. if you solved step one using entirely pen and paper, scan your
+handwritten document and submit it. in either case, submit a readme file
+describing your approach. if you have little documentation about your solution,
+you may choose to implement a basic kasiski examination to ensure that you get
+full points on this step of the assignment.
+
+for the remaining steps of this assignment, you will need to create a gpg key
+pair, request a digital certificate (with another key pair) from pitt's pki, and
+send two emails to our course ta, each signed with one of your private keys, and
+encrypted with one of his public keys. first, you should learn to use gpg. there
+are many resources available on the web regarding the use of gpg, so you are
+responsible for learning this tool. you should also learn how to request a
+digital certificate, and to use a digital certificate to send an email message.
+documentation on using a digital certificate is available on pitt's computing
+services web page.
+
+once you have read available documentation for the above tools, you can complete
+the final steps of this assignment. to send the gpg encrypted, signed email,
+first generate an rsa key pair. use the current recommended strength of bit
+length. send your public key to a keyserver (we recommend the gnupg keyserver).
+hand-deliver your public key fingerprint to the ta. you may need to provide your
+id if the ta does not know you by name. he will provide you with his key
+fingerprint, and then will send you a gpg signed email providing information
+about acquiring his public key. once you acquire his public key, use it to
+verify the signature on the email. finally, send a signed, encrypted email to
+the ta with the following information: the command you used to verify the
+signature, the command you will use to sign and encrypt the email, the keyserver
+you used to store your public key, and a short paragraph explaining why you
+needed to hand-deliver your gpg public key fingerprint (and receive his
+fingerprint in person).
+
+to send the pki encrypted, signed email, you will need to request a certificate
+from pitt. as mentioned above, you can find information about this on pitt's
+computing services web page. email the ta and request him to send a signed email
+to you so that you can acquire his public key and certificate. once you receive
+this, verify the signature. then, use the public key in the included certificate
+to send a second signed, encrypted email to the ta with the following
+information: a sentence explaining how you verified the signature; a short
+paragraph explaining why you did not need to hand-deliver information about your
+pki public key to the ta; a short paragraph comparing the experiences of sending
+signed, encrypted emails in the gpg and pki scenarios; and a short paragraph
+explaining the pros and cons of each method overall. for instance, you may
+consider which you trust more, which is more accessible, which was easier to
+use, etc. once you send both emails, you have completed this assignment.

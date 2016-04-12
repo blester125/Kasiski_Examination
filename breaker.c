@@ -143,6 +143,12 @@ int stripInput(char * in, char * out, int length) {
 	return j;
 }
 
+/* 
+ * This function do a naive Kasiski examination that takes O(n^2) time
+ * Distances between repeater are saved into a set that is back by a 
+ * Red-Black Binary Search Tree. A better impelmentation could probably
+ * be used but this is OK with shorter text
+ */ 
 struct node * kasiski(char * text, int length) {
 	struct node * root = NULL;
 	int i, j, k;
@@ -162,15 +168,22 @@ struct node * kasiski(char * text, int length) {
 	return root;
 }
 
+/* 
+ * This function decodes a cipher text of length length using a key 
+ * of length keyLength. This is implemented as 'a' is a shift of zero.
+ */
 void decode(char *key, int keyLength, char *cipherText, int length) {
 	char c;
 	int i, j, offset, easyMath;
 	j = 0; 
 	for (i = 0; i < length; i++) {
 		c = key[j];
+		//offset = c - 96;
 		offset = c - 97;
+		//easyMath = cipherText[i] - 96;
 		easyMath = cipherText[i] - 97;
 		easyMath = (easyMath + 26 - offset) % 26;
+		//cipherText[i] = easyMath + 96;
 		cipherText[i] = easyMath + 97;
 		j = (j + 1) % keyLength;
 	}

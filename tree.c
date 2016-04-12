@@ -1,6 +1,21 @@
+/************************************
+ * CS 1653 Homework Two at the      *
+ * University of Pittsburgh         *
+ * Taught by Bill Garrison          *
+ * Spring 2016                      *
+ * By:                              *
+ *   Brian Lester                   *
+ ************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tree.h"
+
+/*
+ * A Red Black Binary Search Tree
+ *   This is used as the data structure to implement the
+ *   set of distances between repeated words.
+ */
 
 struct node *newNode(int item) {
 	struct node *temp = (struct node *)malloc(sizeof(struct node));
@@ -19,8 +34,15 @@ void inorder(struct node *root) {
 	}
 }
 
+void deleteTree(struct node *root) {
+	if (root != NULL) {
+		deleteTree(root->left);
+		deleteTree(root->right);
+		free(root);
+	}
+}
+
 struct node * insert(struct node * root, int key) {
-	//printf("Inserting: %d\n", key);
 	root = insert_r(root, key);
 	root->color = 0;
 }
@@ -92,6 +114,7 @@ int isRed(struct node *root) {
 	return root->color;
 }
 
+// Copy the data in the tree into an array.
 int convertToArray(struct node *root, int ints[], int index) {
 	if (root != NULL) {
 		index = convertToArray(root->left, ints, index);
@@ -102,17 +125,3 @@ int convertToArray(struct node *root, int ints[], int index) {
 	}
 	return index;
 }
-
-/*int main() {
-	struct node *root = NULL;
-	root = insert(root, 20);
-	root = insert(root, 30);
-	root = insert(root, 40);
-	root = insert(root, 50);
-	root = insert(root, 60);
-	root = insert(root, 70);
-	root = insert(root, 80);
-	// print inoder traversal of the BST
-	inorder(root);
-	return 0;
-}*/

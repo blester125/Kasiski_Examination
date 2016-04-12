@@ -1,3 +1,12 @@
+/************************************
+ * CS 1653 Homework Two at the      *
+ * University of Pittsburgh         *
+ * Taught by Bill Garrison          *
+ * Spring 2016                      *
+ * By:                              *
+ *   Brian Lester                   *
+ ************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -43,6 +52,7 @@ int main(int argc, char **argv) {
 	/* Read in file from std input */
 	rawTextLen = readIn(rawText, LENGTH);
 	cipherTextLen = stripInput(rawText, cipherText, rawTextLen);
+	/* If the kasiski analysis option was selected */
 	if (!strcmp(argv[1], "kasiski")) {
 		/* Look for the repeats */
 		/* gaps stored in BST */
@@ -64,13 +74,14 @@ int main(int argc, char **argv) {
 					maxCount = count;
 					maxI = gaps[i];
 				}
-				//printf("Gap spacing: %d, %d divisions.\n", gaps[i], count);
 			}
 			printf(
 				"The key with the most multiples is %d with %d divisions.\n\n", 
 				maxI, 
 				maxCount);
 			keyLength = maxI;
+			free(gaps);
+			deleteTree(root);
 		} else {
 			printf("Greatest Common Denominator: %d\n\n", keyLength);
 		}
@@ -81,7 +92,6 @@ int main(int argc, char **argv) {
 			key[19] = '\0';
 			printf("-----------Key used: %s----------\n", key);
 			decode(key, 7, cipherText, cipherTextLen);
-			//printf("%s\n", cipherText);
 			reinsert(cipherText, rawText, rawTextLen);
 			printf("%s\n", rawText);
 		}
@@ -141,18 +151,9 @@ struct node * kasiski(char * text, int length) {
 		while (j < length) {
 			k = 0;
 			while (text[i+k] == text[j+k]) {
-				//repeats[k] = text[i+k];
 				k++;
 			}
-			//repeats[k] = '\0';
 			if (k >= lenThreshold) {
-				/*printf(
-					"%s\tat %d and %d with diff %d\n",
-					repeats,
-					i,
-					j,
-					j-i); 
-				 */
 				root = insert(root, j - i);
 			}
 			j++;

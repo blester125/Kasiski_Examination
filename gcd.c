@@ -1,4 +1,17 @@
+/************************************
+ * CS 1653 Homework Two at the      *
+ * University of Pittsburgh         *
+ * Taught by Bill Garrison          *
+ * Spring 2016                      *
+ * By:                              *
+ *   Brian Lester                   *
+ ************************************/
+
 #include "gcd.h"
+
+/*
+ * Math functions to help with the analysis
+ */
 
 int findGCD(int nums[], int length) {
 	int i;

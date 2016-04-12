@@ -1,3 +1,12 @@
+/************************************
+ * CS 1653 Homework Two at the      *
+ * University of Pittsburgh         *
+ * Taught by Bill Garrison          *
+ * Spring 2016                      *
+ * By:                              *
+ *   Brian Lester                   *
+ ************************************/
+
 #ifndef __GCD_H
 #define __GCD_H
 

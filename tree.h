@@ -10,6 +10,12 @@
 #ifndef __TREE_H_
 #define __TREE_H_
 
+
+/*
+	Node for a Red Black BST
+	0 - BlackNode
+	1 - RedNode
+ */
 struct node {
 	int key;
 	struct node *left;
@@ -26,9 +32,5 @@ struct node * rotateLeft(struct node *root);
 struct node * flipColors(struct node *root);
 int getSize(struct node *root);
 int isRed(struct node *root);
-
-/* 0 - BlackNode
-   1 - RedNode
- */
 
 #endif

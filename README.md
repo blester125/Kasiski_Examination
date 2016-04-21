@@ -88,3 +88,5 @@ inventor of the Vigenere Cipher so it makes a lot of sense as a key. After I
 found 'bellaso' as the key I edited my program to use this new decoding shift 
 distances. The message still decoded properly so this seems to be the correct 
 key. 
+
+Homework 2 for CS 1653 at The University of Pittsburgh with Dr. Garrison.

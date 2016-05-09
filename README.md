@@ -1,4 +1,4 @@
-#CS 1653 Vigenere Cipher Homework two.
+#CS 1653 Vigenere Cipher
 
 ##
 

@@ -1,8 +1,8 @@
-#CS 1653 Vigenere Cipher
+# CS 1653 Vigenere Cipher
 
 ##
 
-###Kasiski Examination Program.
+### Kasiski Examination Program.
 
 This program can preform Kasiski analysis and decode ciphertext if provided a 
 key.
@@ -50,7 +50,8 @@ This means that if there is an a in the key then the plaintext will match
 the ciphertext. 
 
 
-### Approach used to break the cipher. 
+### Approach used to break the cipher.
+
 After I used my program to establish the fact that the key was most likely of 
 length 7 I figured out the key based on the first word of the ciphertext. The 
 first word was "dsyrrshvpleigbt!" The fact that this word is the first word, ends 
